@@ -1,0 +1,67 @@
+@import url(https://fonts.googleapis.com/css?family=Orbitron);
+@import url(https://fonts.googleapis.com/css?family=Lato);
+
+body{
+  background-color: black;
+  margin: 0px; 
+  margin-top: 50px;
+  color: white;
+  font-family: 'Lato', sans-serif;
+  font-size: 20px;
+}
+
+.green{
+  color: lime;
+}
+
+.red {
+  color: red;
+}
+
+.outer{
+    display: table;
+    text-align: center;
+    position: absolute;
+    height: 100%;
+    width: 100%;
+  
+}
+.middle {
+  display: inline-block;
+  vertical-align: top;
+  width: 200px;
+  margin-left: auto;
+  margin-right: auto; 
+  position: relative;
+}
+
+.number {
+  width: 200px;
+  text-align: center;
+  position: absolute;
+  top: 85px;
+  z-index: 2;
+  font-family: 'Orbitron', sans-serif;
+  font-size: 25px; 
+  
+  
+}
+
+.circle {
+  width: 230px;
+  position: absolute;
+  z-index: 1;
+}
+
+.btn{
+  background-color:black;
+  font-size: 30px;
+  padding: 5px;
+  border-style: solid;
+  border-color: white;
+  border-radius: 10px;
+  margin-top: 10px;
+  
+  
+  
+}

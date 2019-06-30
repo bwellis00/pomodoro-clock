@@ -1,0 +1,110 @@
+<!DOCTYPE html>
+<html lang="en" >
+
+<head>
+  <meta charset="UTF-8">
+  <title>Pomodoro Clock</title>
+  <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/font-awesome/4.6.2/css/font-awesome.min.css">
+
+  
+  
+      <link rel="stylesheet" href="./style.css">
+
+  
+</head>
+
+<body>
+
+  <div ng-app="pomodoroApp" ng-controller="pomodoroCtrl">
+
+ 
+  
+  
+  <div class="outer">
+  
+    
+    
+    <div class="middle">
+   
+        
+        <div ng-if="session1==true" class="number green">
+  {{counter | secondsToDateTime | date:'HH:mm:ss'}}<br><Br>
+  </div>
+  <div ng-if="break1==true" class="number red">
+  {{break | secondsToDateTime | date:'HH:mm:ss'}}<br><Br>
+  </div>
+   
+    <div  ng-if="session1==true" class="circle"
+    round-progress
+    max="counterinit*60"
+    current="counter"
+    color="lime"
+    bgcolor="black"
+    radius="100"
+    stroke="10"
+    semi="false"
+    rounded="false"
+    clockwise="true"
+    responsive="false"
+    duration="800"
+    animation="linearEase"
+    animation-delay="0"></div>
+    
+        <div  ng-if="break1==true" class="circle"
+    round-progress
+    max="breakinit*60"
+    current="break"
+    color="red"
+    bgcolor="black"
+    radius="100"
+    stroke="10"
+    semi="false"
+    rounded="false"
+    clockwise="false"
+    responsive="false"
+    duration="800"
+    animation="linearEase"
+    animation-delay="0"></div>
+        
+    </div>
+          
+            <div class="middle">SESSION<br>{{counterinit}}
+              
+<i class="fa fa-chevron-up" ng-click="sessionplus()"></i><i class="fa fa-chevron-down" ng-click="sessionminus()"></i><br><br>
+              BREAK<br>{{breakinit}}
+              
+<i class="fa fa-chevron-up" ng-click="breakplus()"></i><i class="fa fa-chevron-down" ng-click="breakminus()"></i><br>
+            
+         
+              <div ng-if="stop1!=true && session1==true"  ng-click="start()" class="btn">START</div>
+              
+              <div ng-if="stop1==true" ng-click="stop()" class="btn">STOP</div>
+              
+              <div ng-if="stop1!=true && break1==true" ng-click="startbreak()" class="btn">START</div>
+              
+
+          </div>
+          
+          
+</div>
+
+     
+    
+   
+  
+    
+    
+</div>
+  <script src='https://cdnjs.cloudflare.com/ajax/libs/angular.js/1.6.1/angular.min.js'></script>
+<script src='https://cdnjs.cloudflare.com/ajax/libs/angular-svg-round-progressbar/0.4.8/roundProgress.min.js'></script>
+
+  
+
+    <script  src="./script.js"></script>
+
+
+
+
+</body>
+
+</html>
